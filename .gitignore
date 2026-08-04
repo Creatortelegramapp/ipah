@@ -1,0 +1,4 @@
+.vite/
+source/
+assets/images/*-source.png
+_site/
