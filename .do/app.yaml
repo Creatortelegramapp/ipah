@@ -1,6 +1,12 @@
 name: ipah
 region: fra
-
+domains:
+  - domain: ipah.am
+    type: PRIMARY
+    zone: ipah.am
+  - domain: www.ipah.am
+    type: PRIMARY
+    zone: ipah.am
 static_sites:
   - name: ipah-site
     environment_slug: html
