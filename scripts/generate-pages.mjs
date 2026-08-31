@@ -382,9 +382,10 @@ const icons = {
 
 const esc = (value) => String(value).replaceAll('&', '&amp;').replaceAll('"', '&quot;').replaceAll('<', '&lt;').replaceAll('>', '&gt;');
 const navLinks = (c, cls = '') => c.nav.map((label, i) => `<a class="${cls}" href="#${c.navIds[i]}">${label}</a>`).join('');
+const contactPhone = '37441887131';
 const chatUrl = (channel, c) => channel === 'whatsapp'
-  ? `https://wa.me/?text=${encodeURIComponent(c.chatMessage)}`
-  : `https://t.me/share/url?url=${encodeURIComponent('https://ipah.am/' + c.lang + '/')}&text=${encodeURIComponent(c.chatMessage)}`;
+  ? `https://wa.me/${contactPhone}?text=${encodeURIComponent(c.chatMessage)}`
+  : `https://t.me/+${contactPhone}?text=${encodeURIComponent(c.chatMessage)}`;
 
 function logo() {
   return `<span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 44 44"><path d="M11 7v30M33 7v30M11 22h22"/><path d="M22 15c5-7 10-5 10-5s0 6-10 7c-4-5-8-3-8-3s0 5 8 6"/></svg></span><span class="brand-words"><strong>I PAH</strong><small>Ի ՊԱՀ</small></span>`;
