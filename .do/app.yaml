@@ -3,16 +3,15 @@ region: fra
 domains:
   - domain: ipah.am
     type: PRIMARY
-    zone: ipah.am
   - domain: www.ipah.am
     type: PRIMARY
-    zone: ipah.am
 static_sites:
   - name: ipah-site
     environment_slug: html
-    git:
-      repo_clone_url: https://github.com/Creatortelegramapp/ipah.git
+    github:
+      repo: Creatortelegramapp/ipah
       branch: main
+      deploy_on_push: true
     source_dir: /
     build_command: >-
       rm -rf dist && mkdir dist && cp -R assets en hy ru dist/ && cp index.html 404.html robots.txt site.webmanifest sitemap.xml dist/
