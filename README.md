@@ -21,7 +21,7 @@ node scripts/prepare-pages.mjs
 ```
 
 The Pages artifact uses `IPAH_BASE_PATH=/ipah`, so every language and asset works
-at `https://vahe96.github.io/ipah/`.
+at `https://creatortelegramapp.github.io/ipah/`.
 
 ## Before production launch
 
