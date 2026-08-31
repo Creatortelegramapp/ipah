@@ -17,6 +17,7 @@
   const closeMobileMenu = () => {
     if (!menuButton || !mobileMenu) return;
     menuButton.setAttribute('aria-expanded', 'false');
+    menuButton.setAttribute('aria-label', menuButton.dataset.menuOpenLabel || 'Open menu');
     mobileMenu.hidden = true;
     document.body.classList.remove('menu-open');
   };
@@ -63,6 +64,9 @@
   menuButton?.addEventListener('click', () => {
     const willOpen = menuButton.getAttribute('aria-expanded') !== 'true';
     menuButton.setAttribute('aria-expanded', String(willOpen));
+    menuButton.setAttribute('aria-label', willOpen
+      ? (menuButton.dataset.menuCloseLabel || 'Close menu')
+      : (menuButton.dataset.menuOpenLabel || 'Open menu'));
     mobileMenu.hidden = !willOpen;
     document.body.classList.toggle('menu-open', willOpen);
     if (willOpen) mobileMenu.querySelector('a')?.focus();

@@ -464,7 +464,7 @@ function renderPage(c) {
           <div class="language-menu" id="language-menu" hidden>${Object.entries(languages).map(([code, lang]) => `<a href="${lang.path}" lang="${code}"${code === c.lang ? ' aria-current="page"' : ''}><span>${lang.label}</span><small>${lang.name}</small></a>`).join('')}</div>
         </div>
         <button class="header-cta chat-choice-trigger" type="button" ${chatChoiceAttributes(c)}>${c.talk}${icons.arrow}</button>
-        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="${c.menu}" data-menu-toggle><span></span><span></span></button>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="${c.menu}" data-menu-toggle data-menu-open-label="${esc(c.menu)}" data-menu-close-label="${esc(c.close)}"><span></span><span></span></button>
       </div>
     </div>
     <div class="mobile-menu" id="mobile-menu" hidden data-mobile-menu><nav aria-label="Mobile">${navLinks(c, 'mobile-link')}</nav><div class="mobile-menu__actions">${button(c.whatsapp, 'whatsapp', c)}${button(c.telegram, 'telegram', c, 'secondary')}</div></div>
